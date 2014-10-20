@@ -28,6 +28,8 @@ public class GalleryFragment extends ListFragment {
                 R.layout.gallery, container, false);
         DataBaseHelper dbOpenHelper = new DataBaseHelper(this.getActivity(), DB_NAME);
         database = dbOpenHelper.openDataBase();
+        galleryItems.clear();
+        galleryTitle.clear();
         getGalleryItems();
         CustomList adapter = new
                 CustomList(this.getActivity(), galleryTitle, galleryItems);

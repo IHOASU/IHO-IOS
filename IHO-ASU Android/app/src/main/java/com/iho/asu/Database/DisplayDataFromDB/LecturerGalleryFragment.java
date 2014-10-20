@@ -22,7 +22,9 @@ public class LecturerGalleryFragment extends ListFragment {
     private ArrayList<String> galleryTitle = new ArrayList<String>();
     private ArrayList<byte[]> galleryItems = new ArrayList<byte[]>();
     private Integer[] imageId = new Integer[30];
+    public LecturerGalleryFragment(){
 
+    }
     public LecturerGalleryFragment(String LectEmail){
         this.LectEmail = LectEmail;
     }

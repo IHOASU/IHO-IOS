@@ -8,13 +8,11 @@ import android.content.Intent;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.text.Editable;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import com.iho.asu.Database.DisplayDataFromDB.EventsFragment;
 import com.iho.asu.Database.DisplayDataFromDB.GalleryFragment;
@@ -96,6 +94,7 @@ public class MainActivity extends Activity implements OnClickListener{
                 fragmentTransaction.replace(R.id.main_layout, fragment);
                 fragmentTransaction.commit();
                 break;
+            case R.id.customGalleryBackButton:
             case R.id.gallery:
                 fragment = new Gallery();
                 fragmentTransaction.replace(R.id.main_layout, fragment);
@@ -236,15 +235,23 @@ public class MainActivity extends Activity implements OnClickListener{
                 fragmentTransaction.commit();
                 break;
             case R.id.enewsSubmit:
-                Editable txt = ((EditText)fragment.getView().findViewById(R.id.subscriberId)).getText();
-                String emailId = (txt!=null)?txt.toString():"";
-                if(emailId.length()>1 &&emailId.contains("@")) {
-                    new SendEmailTask(emailId).execute();
-                    Toast.makeText(getApplicationContext(), "Thank you for subscribing to our news letter", Toast.LENGTH_LONG).show();
-                } else{
-                    Toast.makeText(getApplicationContext(), "Please enter a valid email address", Toast.LENGTH_LONG).show();
-                }
+                Intent email = new Intent(Intent.ACTION_SEND);
+                email.setData(Uri.parse("mailto:"));
+                email.setType("text/plain");
+                email.putExtra(Intent.EXTRA_EMAIL, new String[]{ "bbaburaj@asu.edu"});
+                email.putExtra(Intent.EXTRA_SUBJECT, "IHO E-News Subscription");
+                email.setType("message/rfc822");
+                startActivity(Intent.createChooser(email, "Choose an Email Client:"));
                 break;
+//                Editable txt = ((EditText)fragment.getView().findViewById(R.id.subscriberId)).getText();
+//                String emailId = (txt!=null)?txt.toString():"";
+//                if(emailId.length()>1 &&emailId.contains("@")) {
+//                    new SendEmailTask(emailId).execute();
+//                    Toast.makeText(getApplicationContext(), "Thank you for subscribing to our news letter", Toast.LENGTH_LONG).show();
+//                } else{
+//                    Toast.makeText(getApplicationContext(), "Please enter a valid email address", Toast.LENGTH_LONG).show();
+//                }
+//                break;
             case R.id.clearEmailId:
                 ((EditText)fragment.getView().findViewById(R.id.subscriberId)).setText("");
                 break;

@@ -23,7 +23,7 @@ public class PerNewsViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(
-                R.layout.per_newsitem, container, false);
+                R.layout.per_news_item, container, false);
         ImageView imageView = (ImageView) v.findViewById(R.id.image);
         TextView textView = (TextView) v.findViewById(R.id.title);
         TextView textView1 = (TextView)v.findViewById(R.id.text);

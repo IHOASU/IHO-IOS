@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>  
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
@@ -56,8 +56,7 @@
         android:textColor="@android:color/background_light"
         android:textStyle="bold"
         android:text="Click here to read more"
-        android:onClick="onClick"
-        android:textSize="20dp" />
+        android:onClick="onClick"/>
     </LinearLayout>
     </ScrollView>
 </RelativeLayout>
