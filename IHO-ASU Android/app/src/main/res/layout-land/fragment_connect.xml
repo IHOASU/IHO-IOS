@@ -92,8 +92,8 @@
             android:padding="@dimen/activity_horizontal_margin"
             android:weightSum="1">
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="175dp"
+            android:layout_width="175dp"
+            android:layout_height="200dp"
             android:id="@+id/fbButton"
             android:background="@drawable/fb"
             android:onClick="onClick"
@@ -103,12 +103,12 @@
                 android:layout_height="wrap_content"
                 android:text="         "/>
         <ImageButton
-            android:layout_width="wrap_content"
-            android:layout_height="170dp"
+            android:layout_width="150dp"
+            android:layout_height="200dp"
             android:id="@+id/twButton"
             android:background="@drawable/twitter"
             android:onClick="onClick"
-            android:layout_weight="0.22" />
+            android:layout_weight="0.32" />
     </LinearLayout>
 
     </LinearLayout>

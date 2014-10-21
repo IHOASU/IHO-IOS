@@ -93,7 +93,7 @@
             android:orientation="horizontal"
             android:visibility="visible"
             android:padding="@dimen/activity_horizontal_margin"
-            >
+            android:weightSum="1">
         <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -106,10 +106,11 @@
                 android:text="         "/>
         <ImageButton
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_height="match_parent"
             android:id="@+id/twButton"
             android:background="@drawable/twitter"
-            android:onClick="onClick" />
+            android:onClick="onClick"
+            android:layout_weight="0.71" />
     </LinearLayout>
 
     </LinearLayout>
