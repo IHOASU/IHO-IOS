@@ -8,14 +8,15 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.iho.asu.Database.Columns;
+import com.iho.asu.Database.CustomList2;
 import com.iho.asu.Database.DataBaseHelper;
 import com.iho.asu.Database.Tables.Science;
 import com.iho.asu.R;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -41,7 +42,9 @@ public class ScienceFragment extends ListFragment {
         scienceItems = new HashMap<String, Science>();
         scienceItems.clear();
         getScienceItems();
-        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, scienceDetailedTitle.keySet().toArray(new String[0]));
+        //ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, scienceDetailedTitle.keySet().toArray(new String[0]));
+        CustomList2 adapter = new
+                CustomList2(this.getActivity(), new ArrayList(scienceDetailedTitle.keySet()));
         this.setListAdapter(adapter);
         adapter.notifyDataSetChanged();
         return v;
@@ -62,7 +65,7 @@ public class ScienceFragment extends ListFragment {
     //Extracting elements from the database
     private void getScienceItems() {
         String[] columns = Columns.getScienceColumnNames();
-        Cursor scienceCursor = database.query(TABLE_NAME, columns, null, null, null, null, Columns.KEY_SCIENCE_ID.getColumnName());
+        Cursor scienceCursor = database.query(TABLE_NAME, columns, null, null, null, null, Columns.KEY_SCIENCE_ID.getColumnName()+" DESC");
         scienceCursor.moveToFirst();
         while (!scienceCursor.isAfterLast()) {
             cursorToScience(scienceCursor);

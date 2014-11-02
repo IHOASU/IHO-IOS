@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -34,6 +35,7 @@ public class PerLecturerViewFragment extends Fragment {
         imageView.setImageBitmap(displayImg);
         textView.setText(i.getStringExtra(Columns.KEY_LECTURER_NAME.getColumnName()));
         textView1.setText(i.getStringExtra(Columns.KEY_LECTURE_TITLE.getColumnName()));
+        textView1.setTypeface(textView.getTypeface(), Typeface.BOLD);
         textView2.setText(i.getStringExtra(Columns.KEY_LECTURER_BIO.getColumnName()));
         return v;
     }

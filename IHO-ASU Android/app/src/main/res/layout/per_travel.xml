@@ -6,7 +6,7 @@
     <ImageButton
         android:layout_width="384dp"
         android:layout_height="40dp"
-        android:id="@+id/customEventsBackbutton"
+        android:id="@+id/customTravelBackbutton"
         android:background="@drawable/header_trvl_lrn"
         android:onClick="onClick"
         android:layout_alignParentRight="true"
@@ -16,7 +16,7 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
-        android:layout_below="@+id/customEventsBackbutton"
+        android:layout_below="@+id/customTravelBackbutton"
         android:id="@+id/scrollView2"
         android:background="@android:color/background_light">
     <LinearLayout

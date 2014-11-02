@@ -4,14 +4,15 @@ import android.app.ListFragment;
 import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.iho.asu.Database.Columns;
+import com.iho.asu.Database.CustomList2;
 import com.iho.asu.Database.DataBaseHelper;
 import com.iho.asu.Database.Tables.Travel;
 import com.iho.asu.R;
@@ -40,7 +41,8 @@ public class TravelFragment extends ListFragment {
         travelItems.clear();
         travelTitle.clear();
         getTravelItems();
-        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, travelTitle);
+        CustomList2 adapter = new
+                CustomList2(this.getActivity(), travelTitle);
         this.setListAdapter(adapter);
         adapter.notifyDataSetChanged();
         return v;
@@ -49,13 +51,11 @@ public class TravelFragment extends ListFragment {
 
     @Override
     public void onListItemClick(ListView l, View v, int position, long id){
-        Intent i= new Intent(this.getActivity(),ViewActivity.class );
         String travel_text = travelTitle.get(position);
         Travel travel = travelItems.get(travel_text);
-        i.putExtra(Columns.KEY_TRAVEL_TEXT.getColumnName(), travel_text);
-        i.putExtra(Columns.KEY_TRAVEL_LINK.getColumnName(),travel.getLink());
-        i.putExtra("ViewNeeded","Travel");
-        startActivity(i);
+        Uri uri = Uri.parse(travel.getLink());
+        Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+        startActivity(intent);
     }
 
     //Extracting elements from the database

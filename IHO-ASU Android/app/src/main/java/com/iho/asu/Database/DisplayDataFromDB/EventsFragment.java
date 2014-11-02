@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.iho.asu.Database.Columns;
+import com.iho.asu.Database.CustomList2;
 import com.iho.asu.Database.DataBaseHelper;
 import com.iho.asu.Database.Tables.Events;
 import com.iho.asu.R;
@@ -41,7 +41,8 @@ public class EventsFragment extends ListFragment {
         eventsItems.clear();
         eventsTitle.clear();
         getEventsItems();
-        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, eventsTitle);
+        CustomList2 adapter = new
+                CustomList2(this.getActivity(), eventsTitle);
         this.setListAdapter(adapter);
         adapter.notifyDataSetChanged();
         return v;

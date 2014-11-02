@@ -6,7 +6,7 @@
     android:id="@+id/field_layout">
     <ImageButton
         android:layout_width="384dp"
-        android:layout_height="60dp"
+        android:layout_height="80dp"
         android:id="@+id/customBackButton"
         android:background="@drawable/header_field_notes"
         android:onClick="onClick"
@@ -25,7 +25,6 @@
         android:layout_height="match_parent"
         android:id="@+id/layout"
         android:orientation="vertical"
-        android:padding="@dimen/activity_horizontal_margin"
         android:layout_gravity="center_horizontal"
         android:layout_below="@+id/customBackButton">
         <LinearLayout
@@ -35,49 +34,47 @@
             android:layout_weight="1.30">
 
             <TextView
-                android:textStyle="bold"
-                android:textSize="24dp"
-                android:id="@+id/textView1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="OUR LECTURERS"/>
+                android:text="\n"
+                android:id="@+id/textView3"
+                android:textStyle="bold"
+                android:textSize="20dp" />
 
             <Button
                 android:id="@+id/fn1"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape"
-                android:text="Click to see our lecturers                                                                 >"
+                android:text="Choose a Lecturer                                                                                                                  >   "
                 android:textColor="@android:color/background_light"
-                android:textStyle="bold"
                 android:onClick="onClick"
                 android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nNEW SCIENCE"
+                android:text="\n"
                 android:id="@+id/textView4"
                 android:textStyle="bold"
-                android:textSize="24dp" />
+                android:textSize="20dp" />
             <Button
                 android:id="@+id/fn2"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape"
-                android:text="Read About It Here                                                                            >"
+                android:text="New Science                                                                                                                               >"
                 android:textColor="@android:color/background_light"
-                android:textStyle="bold"
                 android:onClick="onClick"
                 android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text='\nWHO IS "LUCY"?'
+                android:text="\n"
                 android:id="@+id/textView2"
                 android:textStyle="bold"
-                android:textSize="24dp"
+                android:textSize="20dp"
                 android:clickable="false" />
 
             <Button
@@ -86,8 +83,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape"
                 android:textColor="@android:color/background_light"
-                android:textStyle="bold"
-                android:text="Find Out Now                                                                                        >"
+                android:text="Who is Lucy?                                                                                                                                          >"
                 android:onClick="onClick"
                 android:visibility="visible"
                 android:layout_below="@+id/linearLayout"
@@ -96,7 +92,7 @@
 
             <TextView
                 android:textStyle="bold"
-                android:textSize="24dp"
+                android:textSize="20sp"
                 android:id="@+id/textView"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -106,8 +102,8 @@
                 android:id="@+id/textView5"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Follow ASU anthropology students at research and field school sites in Africa and beyond!"
-                android:textSize="20dp" />
+                android:paddingLeft="@dimen/activity_horizontal_margin"
+                android:text="Follow ASU anthropology students at research and field school sites in Africa and beyond!"/>
 
             <Button
                 android:id="@+id/fn4"
@@ -115,8 +111,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/shape"
                 android:textColor="@android:color/background_light"
-                android:textStyle="bold"
-                android:text="Visit Now                                                                                                >"
+                android:text="Visit Now                                                                                                                                                             >"
                 android:onClick="onClick"
                 android:visibility="visible"
                 android:layout_below="@+id/linearLayout"

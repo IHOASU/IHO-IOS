@@ -8,10 +8,10 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.iho.asu.Database.Columns;
+import com.iho.asu.Database.CustomList2;
 import com.iho.asu.Database.DataBaseHelper;
 import com.iho.asu.Database.Tables.News;
 import com.iho.asu.R;
@@ -41,7 +41,9 @@ public class NewsFragment extends ListFragment {
         newsItems.clear();
         newsTitle.clear();
         getNewsItems();
-        ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, newsTitle);
+        CustomList2 adapter = new
+                CustomList2(this.getActivity(), newsTitle);
+        //ArrayAdapter adapter = new ArrayAdapter<String>(getActivity(), android.R.layout.simple_list_item_1, newsTitle);
         this.setListAdapter(adapter);
         adapter.notifyDataSetChanged();
         return v;
@@ -64,7 +66,7 @@ public class NewsFragment extends ListFragment {
     //Extracting elements from the database
     private void getNewsItems() {
         String[] columns = Columns.getNewsColumnNames();
-        Cursor newsCursor = database.query(TABLE_NAME, columns, null, null, null, null, Columns.KEY_NEWS_ID.getColumnName());
+        Cursor newsCursor = database.query(TABLE_NAME, columns, null, null, null, null, Columns.KEY_NEWS_ID.getColumnName()+" DESC");
         newsCursor.moveToFirst();
         while (!newsCursor.isAfterLast()) {
             cursorToNews(newsCursor);

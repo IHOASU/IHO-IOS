@@ -26,14 +26,14 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:padding="@dimen/activity_horizontal_margin">
+        android:paddingTop="@dimen/activity_horizontal_margin">
 
         <Button
             android:id="@+id/connect1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/shape"
-            android:text="Institute of Human Origins               >"
+            android:text="Institute of Human Origins                       >"
             android:textColor="@android:color/background_light"
             android:textStyle="bold"
             android:onClick="onClick" />
@@ -51,7 +51,7 @@
             android:background="@drawable/shape"
             android:textColor="@android:color/background_light"
             android:textStyle="bold"
-            android:text="Becoming Human                             >"
+            android:text="Becoming Human                                     >"
             android:onClick="onClick"
             android:visibility="visible" />
 
@@ -68,7 +68,7 @@
             android:background="@drawable/shape"
             android:textColor="@android:color/background_light"
             android:textStyle="bold"
-            android:text="Sign Up for E-News                          >"
+            android:text="Sign Up for E-News                                  >"
             android:onClick="onClick"
             android:visibility="visible" />
 

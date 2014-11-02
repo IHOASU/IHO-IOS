@@ -27,46 +27,45 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_weight="1.30"
-            android:padding="@dimen/activity_horizontal_margin">
+            >
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="NEWS"
                 android:id="@+id/textView"
                 android:textStyle="bold"
                 android:textSize="20dp" />
             <Button
                 android:id="@+id/ne1"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:background="@drawable/shape"
-                android:text="Click to view                                         >"
+                android:text="  News                                                       >"
                 android:textColor="@android:color/background_light"
-                android:textStyle="bold"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nEVENTS"
+                android:text="\n"
                 android:id="@+id/textView4"
                 android:textStyle="bold"
                 android:textSize="20dp" />
             <Button
                 android:id="@+id/ne2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:background="@drawable/shape"
-                android:text="The Next Lecture                                 >"
+                android:text="  Events                                                     >"
                 android:textColor="@android:color/background_light"
-                android:textStyle="bold"
-                android:onClick="onClick" />
+                android:onClick="onClick"
+                android:textSize="20dp" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="\nTRAVEL AND LEARN"
+                android:text="\n"
                 android:id="@+id/textView2"
                 android:textStyle="bold"
                 android:textSize="20dp"
@@ -75,15 +74,15 @@
             <Button
                 android:id="@+id/ne3"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="60dp"
                 android:background="@drawable/shape"
                 android:textColor="@android:color/background_light"
-                android:textStyle="bold"
-                android:text="IHO Travel And Learn                        >"
+                android:text="  Travel And Learn                                   >"
                 android:onClick="onClick"
                 android:visibility="visible"
                 android:layout_below="@+id/linearLayout"
-                android:layout_alignParentLeft="true" />
+                android:layout_alignParentLeft="true"
+                android:textSize="20dp" />
         </LinearLayout>
 
     </ScrollView>

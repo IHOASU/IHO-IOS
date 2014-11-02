@@ -83,6 +83,11 @@ public class ViewActivity extends Activity implements View.OnClickListener {
                 ft.replace(R.id.per_view, sFragment);
                 ft.commit();
                 break;
+            case R.id.customTravelBackbutton:
+                TravelFragment tFragment = new TravelFragment();
+                ft.replace(R.id.per_view, tFragment);
+                ft.commit();
+                break;
             case R.id.emailButton:
                 Intent emailI = new Intent(Intent.ACTION_SENDTO,Uri.fromParts("mailto",email,null));
                 startActivity(Intent.createChooser(emailI, "Choose an Email Client:"));

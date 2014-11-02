@@ -194,7 +194,6 @@ public class MainActivity extends Activity implements OnClickListener{
                 startActivity(intent);
                 break;
             case R.id.customFNBackbutton:
-            case R.id.customFNLandscapeBackButton:
             case R.id.field:
                 fragment = new FieldNotes();
                 fragmentTransaction.replace(R.id.main_layout, fragment);
